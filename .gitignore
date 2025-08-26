@@ -1,4 +1,4 @@
 .vens
 .cast
-hexlet_code.egg-info
+hexlet_code.egg-info/
 build/lib/gendiff
