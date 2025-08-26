@@ -1,4 +1,5 @@
 import argparse
+from gendiff.engine import parsers
 
 
 
@@ -16,6 +17,13 @@ def main():
 
     args = parser.parse_args()
     
+    file1_data = parsers.read_json(args.first_file)
+    file2_data = parsers.read_json(args.second_file)
+
+    print("Data_first")
+    print(file1_data)
+    print("Data second")
+    print(file2_data)
 
 
 
