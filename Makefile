@@ -1,31 +1,30 @@
-install: #install package
+install:
 	uv sync
 
-reinstall: #start
-	uv sync
-	uv build
-	uv tool install --force dist/*.whl
+run:
+	uv run gendiff
 
-build: #assembly
+test:
+	uv run pytest
+
+test-coverage:
+	uv run pytest --cov=gendiff --cov-report=xml:coverage.xml
+
+lint:
+	uv run ruff check gendiff
+
+check: test lint
+
+build:
 	uv build
 
 package-install:
 	uv tool install dist/*.whl
 
-package-force:
+reinstall:
 	uv tool install --force dist/*.whl
 
-lint: #code check
-	uv run ruff check gendiff
+uninstall:
+	uv tool uninstall hexlet-code
 
-lint-fix: #code check fix
-	uv run ruff check --fix
-
-test: 
-	uv run pytest
-
-check: 
-	test lint
-
-test-coverage:
-	uv run pytest --cov=gendiff --cov-report=xml:converage.xml
+.PHONY: install test lint selfcheck check build package-install reinstall uninstall
