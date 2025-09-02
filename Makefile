@@ -20,3 +20,12 @@ lint: #code check
 
 lint-fix: #code check fix
 	uv run ruff check --fix
+
+test: 
+	uv run pytest
+
+check: 
+	lint test
+
+test-coverage:
+	uv run pytest --cov=gendiff --cov-report xml
