@@ -4,3 +4,4 @@ hexlet_code.egg-info/
 build/lib/gendiff
 file1.json
 file2.json
+.python-version
