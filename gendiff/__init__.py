@@ -1,5 +1,6 @@
 from gendiff.engine.generate_diff import generate_diff
 
 __all__ = (
-    'generate_diff'
+    "generate_diff",
+    "parsers", 
 )

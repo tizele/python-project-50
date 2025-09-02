@@ -15,8 +15,8 @@ def main():
 
     args = parser.parse_args()
     
-    file1_data = parsers.read_json(args.first_file)
-    file2_data = parsers.read_json(args.second_file)
+    file1_data = parsers.read_file(args.first_file)
+    file2_data = parsers.read_file(args.second_file)
 
     diff = generate_diff.generate_diff(file1_data, file2_data)
 

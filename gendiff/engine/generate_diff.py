@@ -1,3 +1,5 @@
+
+
 def generate_diff(data1, data2):
 
     keys1 = set(data1.keys())

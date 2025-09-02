@@ -12,8 +12,8 @@ def test_generate_diff():
     file2_path = 'tests/test_data/file2.json'
     expected_diff_path = 'tests/test_data/expected_diff.txt'
 
-    data1 = parsers.load_data(file1_path)
-    data2 = parsers.load_data(file2_path)
+    data1 = parsers.read_file(file1_path)
+    data2 = parsers.read_file(file2_path)
     expected_diff = load_file(expected_diff_path)
 
     actual_diff = generate_diff.generate_diff(data1, data2)
