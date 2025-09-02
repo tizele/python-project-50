@@ -16,7 +16,7 @@ package-force:
 	uv tool install --force dist/*.whl
 
 lint: #code check
-	uv run ruff check
+	uv run ruff check gendiff
 
 lint-fix: #code check fix
 	uv run ruff check --fix
@@ -25,7 +25,7 @@ test:
 	uv run pytest
 
 check: 
-	lint test
+	test lint
 
 test-coverage:
-	uv run pytest --cov=gendiff --cov-report xml
+	uv run pytest --cov=gendiff --cov-report=xml:converage.xml
