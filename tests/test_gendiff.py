@@ -1,10 +1,11 @@
     #
-import pytest
 from gendiff.engine import generate_diff, parsers
+
 
 def load_file(file_path):
     with open(file_path, 'r') as f:
         return f.read()
+
 
 def test_generate_diff():
     file1_path = 'tests/test_data/file1.json'
