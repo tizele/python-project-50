@@ -1,4 +1,5 @@
 
+#import pytest
 
 def generate_diff(data1, data2):
 
@@ -18,7 +19,7 @@ def generate_diff(data1, data2):
             diff += f" - {key}: {data1[key]}\n"
         else:
             diff += f" + {key}: {data2[key]}\n"
-    diff += "}"
+    diff += "}\n"
 
     return diff
 

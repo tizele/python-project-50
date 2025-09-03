@@ -22,6 +22,8 @@ package-install:
 	uv tool install dist/*.whl
 
 reinstall:
+	uv sync
+	uv build
 	uv tool install --force dist/*.whl
 
 uninstall:
