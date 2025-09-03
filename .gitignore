@@ -2,6 +2,6 @@
 .cast
 hexlet_code.egg-info/
 build/lib/gendiff
-file1.json
-file2.json
+file1test.json
+file2test.json
 .python-version
