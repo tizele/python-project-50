@@ -13,6 +13,9 @@ test-coverage:
 lint:
 	uv run ruff check gendiff
 
+lint-fix:
+	uv run ruff check gendiff --fix
+
 check: test lint
 
 build:

@@ -11,17 +11,22 @@ def generate_diff(data1, data2):
     for key in all_keys:
         if key in data1 and key in data2:
             if data1[key] == data2[key]:
-                diff += f"   {key}: {data1[key]}\n"
+                diff += f"   {key}: {format_value(data1[key])}\n"
             else:
-                diff += f" - {key}: {data1[key]}\n"
-                diff += f" + {key}: {data2[key]}\n"
+                diff += f" - {key}: {format_value(data1[key])}\n"
+                diff += f" + {key}: {format_value(data2[key])}\n"
         elif key in data1:
-            diff += f" - {key}: {data1[key]}\n"
+            diff += f" - {key}: {format_value(data1[key])}\n"
         else:
-            diff += f" + {key}: {data2[key]}\n"
-    diff += "}\n"
-
+            diff += f" + {key}: {format_value(data2[key])}\n"
+    diff += "}"
     return diff
+
+
+def format_value(value):
+    if isinstance(value, bool):
+        return str(value).lower()
+    return str(value)
 
 
 
